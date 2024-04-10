@@ -34,9 +34,14 @@ control 'cis-dil-benchmark-1.1.1.1' do
       it { should be_configured }
     end
 
-    describe kernel_module('cramfs') do
-      it { should_not be_loaded }
-      it { should be_disabled }
+    describe.one do
+      describe file('/proc/modules') do
+        its('content') { should_not match(/^cramfs\s/) }
+      end
+      describe kernel_module('cramfs') do
+        it { should_not be_loaded }
+        it { should be_disabled }
+      end
     end
   end
 end
@@ -54,9 +59,14 @@ control 'cis-dil-benchmark-1.1.1.2' do
       it { should be_configured }
     end
 
-    describe kernel_module('freevxfs') do
-      it { should_not be_loaded }
-      it { should be_disabled }
+    describe.one do
+      describe file('/proc/modules') do
+        its('content') { should_not match(/^freevxfs\s/) }
+      end
+      describe kernel_module('freevxfs') do
+        it { should_not be_loaded }
+        it { should be_disabled }
+      end
     end
   end
 end
@@ -74,9 +84,14 @@ control 'cis-dil-benchmark-1.1.1.3' do
       it { should be_configured }
     end
 
-    describe kernel_module('jffs2') do
-      it { should_not be_loaded }
-      it { should be_disabled }
+    describe.one do
+      describe file('/proc/modules') do
+        its('content') { should_not match(/^jffs2\s/) }
+      end
+      describe kernel_module('jffs2') do
+        it { should_not be_loaded }
+        it { should be_disabled }
+      end
     end
   end
 end
@@ -94,9 +109,14 @@ control 'cis-dil-benchmark-1.1.1.4' do
       it { should be_configured }
     end
 
-    describe kernel_module('hfs') do
-      it { should_not be_loaded }
-      it { should be_disabled }
+    describe.one do
+      describe file('/proc/modules') do
+        its('content') { should_not match(/^hfs\s/) }
+      end
+      describe kernel_module('hfs') do
+        it { should_not be_loaded }
+        it { should be_disabled }
+      end
     end
   end
 end
@@ -114,9 +134,14 @@ control 'cis-dil-benchmark-1.1.1.5' do
       it { should be_configured }
     end
 
-    describe kernel_module('hfsplus') do
-      it { should_not be_loaded }
-      it { should be_disabled }
+    describe.one do
+      describe file('/proc/modules') do
+        its('content') { should_not match(/^hfsplus\s/) }
+      end
+      describe kernel_module('hfsplus') do
+        it { should_not be_loaded }
+        it { should be_disabled }
+      end
     end
   end
 end
@@ -134,9 +159,14 @@ control 'cis-dil-benchmark-1.1.1.6' do
       it { should be_configured }
     end
 
-    describe kernel_module('squashfs') do
-      it { should_not be_loaded }
-      it { should be_disabled }
+    describe.one do
+      describe file('/proc/modules') do
+        its('content') { should_not match(/^squashfs\s/) }
+      end
+      describe kernel_module('squashfs') do
+        it { should_not be_loaded }
+        it { should be_disabled }
+      end
     end
   end
 end
@@ -154,9 +184,14 @@ control 'cis-dil-benchmark-1.1.1.7' do
       it { should be_configured }
     end
 
-    describe kernel_module('udf') do
-      it { should_not be_loaded }
-      it { should be_disabled }
+    describe.one do
+      describe file('/proc/modules') do
+        its('content') { should_not match(/^udf\s/) }
+      end
+      describe kernel_module('udf') do
+        it { should_not be_loaded }
+        it { should be_disabled }
+      end
     end
   end
 end
@@ -174,9 +209,14 @@ control 'cis-dil-benchmark-1.1.1.8' do
       it { should be_configured }
     end
 
-    describe kernel_module('vfat') do
-      it { should_not be_loaded }
-      it { should be_disabled }
+    describe.one do
+      describe file('/proc/modules') do
+        its('content') { should_not match(/^vfat\s/) }
+      end
+      describe kernel_module('vfat') do
+        it { should_not be_loaded }
+        it { should be_disabled }
+      end
     end
   end
 
